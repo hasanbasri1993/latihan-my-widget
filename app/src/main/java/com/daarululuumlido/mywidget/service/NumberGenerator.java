@@ -1,4 +1,4 @@
-package com.daarululuumlido.mywidget;
+package com.daarululuumlido.mywidget.service;
 
 import java.util.Random;
 

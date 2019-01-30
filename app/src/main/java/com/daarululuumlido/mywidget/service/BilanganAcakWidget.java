@@ -1,9 +1,12 @@
-package com.daarululuumlido.mywidget;
+package com.daarululuumlido.mywidget.service;
 
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.widget.RemoteViews;
+
+import com.daarululuumlido.mywidget.R;
+import com.daarululuumlido.mywidget.service.NumberGenerator;
 
 /**
  * Implementation of App Widget functionality.
@@ -14,12 +17,11 @@ public class BilanganAcakWidget extends AppWidgetProvider {
                                 int appWidgetId) {
 
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.bilangan_acak_widget);
-        String lastUpdate = "Random"+NumberGenerator.Generate(100);
+        String lastUpdate = "Random "+ NumberGenerator.Generate(100);
         views.setTextViewText(R.id.appwidget_text, lastUpdate);
-
-        // Instruct the widget manager to update the widget
         appWidgetManager.updateAppWidget(appWidgetId, views);
     }
+
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
